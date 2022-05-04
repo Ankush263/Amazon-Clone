@@ -1,12 +1,14 @@
 import React from 'react'
 import './Header.css'
+import amazon from '../src/images/amazon_PNG11.png'
 
 function Header() {
   return (
     <div className='header'>
       <img 
-        className='header_logo' 
-        src='https://pin.it/2Yee0ic' 
+        alt='Amazon logo'
+        className='header_logo'
+        src={amazon}
       />
 
       <div className='header__search'>
