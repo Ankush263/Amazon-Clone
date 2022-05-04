@@ -13,15 +13,15 @@ function Product() {
         </p>
         <div className='product__rating'>
           <p>🌟</p>
-          <p>🌟</p>
-          <p>🌟</p>
         </div>
       </div>
 
       <img 
         src={TheLeanStartup}
-        alt=''
+        alt='The lean startup'
       />
+
+      <button>Add to Busket</button>
     </div>
   )
 }
