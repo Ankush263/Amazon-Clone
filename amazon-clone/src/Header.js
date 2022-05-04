@@ -1,5 +1,8 @@
 import React from 'react'
 import './Header.css'
+import SearchIcon from '@material-ui/icons/Search';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+
 import amazon from '../src/images/amazon_PNG11.png'
 
 function Header() {
@@ -16,6 +19,7 @@ function Header() {
           className='header__searchInput'
           type='text'
         />
+        <SearchIcon className='header__searchIcon' />
       </div>
 
       <div className='header__nav'>
@@ -43,6 +47,11 @@ function Header() {
           <span className='header__optionLineTwo'>
             Prime
           </span>
+        </div>
+
+        <div className='header__optionBasket'>
+          <ShoppingBasketIcon />
+          <span className='header__optionLineTwo header__basketCount'>0</span>
         </div>
       </div>
     </div>
