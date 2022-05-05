@@ -19,7 +19,7 @@ const Home = () => {
         <img 
           className='home__image'
           src={sliding_img_1}
-          alt='sliding image 1'
+          alt='sliding pic 1'
         />
       </div>
 

@@ -12,12 +12,12 @@ function Product({ id, title, image, price, rating }) {
         </p>
         <div className='product__rating'>
           {Array(rating).fill().map((_, i) => (
-            <p>🌟</p>
+            <span>🌟</span>
           ))}
         </div>
       </div>
 
-      <img src={image} />
+      <img src={image} alt='' />
 
       <button>Add to Busket</button>
     </div>
