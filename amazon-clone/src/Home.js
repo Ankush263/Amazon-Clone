@@ -43,7 +43,7 @@ const Home = () => {
       <div className='home__row'>
         <Product
           id="4903850"
-          title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
+          title="Fillbit wrist watch Model LC47TG89SSVBHS 12' water proof digital"
           price={199.99}
           rating={3}
           image={watch}
