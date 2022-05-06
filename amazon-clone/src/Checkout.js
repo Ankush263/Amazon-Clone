@@ -1,5 +1,6 @@
 import React from 'react';
 import './Checkout.css'
+import Subtotal from './Subtotal';
 
 import checkout_ad from '../src/images/checkout_ad.jpg'
 
@@ -20,7 +21,7 @@ function Checkout() {
       </div>
 
       <div className='checkout__right'>
-        <h2>The subtitle go here</h2>
+        <Subtotal />
       </div>
     </div>
   )
