@@ -23,6 +23,7 @@ const Subtotal = () => {
         thousandSeparator={true}
         prefix={'Rs'}
       />
+      <button>Proceed to checkout</button>
     </div>
   )
 }
