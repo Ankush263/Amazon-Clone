@@ -12,11 +12,11 @@ const CheckoutProduct = ({ id, image, title, price, rating }) => {
           <small>$</small>
           <strong>{price}</strong>
         </p>
-        <div className='checkoutProduct__rating'>
-          {Array(rating).fill().map((_, i) => {
+        <p className='checkoutProduct__rating'>
+          {Array(rating).fill().map((rate) => (
             <p>🌟</p>
-          })}
-        </div>
+          ))}
+        </p>
         <button>Remove from Basket</button>
       </div>
     </div>
