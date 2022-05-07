@@ -13,11 +13,11 @@ const Subtotal = () => {
         renderText={(value) => (
           <>
             <p>
-              Subtotal ({basket?.length <= 1 ? basket?.length + ' item' : basket?.length + ' items'}):
+              Subtotal ({basket?.length}{basket?.length <= 1 ? ' item' : ' items'}):
               <strong>
                 {basket.forEach(element => (
                   totalPrice += element.price
-                ))}{totalPrice}
+                ))}${totalPrice}
               </strong>
             </p>
             <small className='subtotal__gift'>
