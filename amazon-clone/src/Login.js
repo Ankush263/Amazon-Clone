@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Login.css'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { auth } from './firebase'
 
 
@@ -8,6 +8,7 @@ import amazon from '../src/images/amazon_PNG1.png'
 
 
 const Login = () => {
+  const history = useHistory()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -17,6 +18,9 @@ const Login = () => {
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         console.log(auth)
+        if(auth) {
+          history.push('/')
+        }
       })
       .catch(err => alert(err))
   }
@@ -52,5 +56,5 @@ const Login = () => {
     </div>
   )
 }
-//3:45:28
+
 export default Login
