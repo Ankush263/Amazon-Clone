@@ -14,6 +14,21 @@ const Login = () => {
 
   const signin = (e) => {
     e.preventDefault()
+    
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        console.log(auth)
+        if(auth) {
+          history.push('/')
+        }
+      })
+      .catch(err => alert(err.message))
+  }
+
+  const register = (e) => {
+    e.preventDefault()
+
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
@@ -22,12 +37,7 @@ const Login = () => {
           history.push('/')
         }
       })
-      .catch(err => alert(err))
-  }
-
-  const register = (e) => {
-    e.preventDefault()
-
+      .catch(err => alert(err.message))
   }
 
   return (
