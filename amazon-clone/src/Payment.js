@@ -12,10 +12,10 @@ import axios from 'axios'
 const Payment = () => {
 
   const [{basket, user}, dispatch] = useStateValue()
+  const history = useHistory()
 
   const stripe = useStripe()
   const elements = useElements()
-  const history = useHistory()
 
   const [succeeded, setSucceeded] = useState(false)
   const [processing, setProcessing] = useState('')
@@ -31,7 +31,11 @@ const Payment = () => {
       })
       setClientSecret(response.data.clientSecret)
     }
+
+    getClientSecret()
   }, [basket])
+
+  console.log('the secret is>>>', clientSecret)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -45,6 +49,10 @@ const Payment = () => {
       setSucceeded(true)
       setError(null)
       setProcessing(false)
+
+      dispatch({
+        type: 'EMPTY_BASKET'
+      })
 
       history.replace('/orders')
     })
