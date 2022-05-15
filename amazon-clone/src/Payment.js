@@ -37,6 +37,7 @@ const Payment = () => {
   }, [basket])
 
   console.log('the secret is>>>', clientSecret)
+  console.log('🧑‍💻', user)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -50,7 +51,7 @@ const Payment = () => {
 
       db
         .collection('users')
-        .doc(user?.id)
+        .doc(user?.uid)
         .collection('orders')
         .doc(paymentIntent.id)
         .set({
