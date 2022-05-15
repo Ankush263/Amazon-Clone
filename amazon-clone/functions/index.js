@@ -5,6 +5,7 @@ const stripe = require("stripe")(
   "sk_test_51KyTYDSBWqHPKSDaPL3NjDXXCtNNryJmjZYJZQ0Jhh7vqbkjKvnsi29oaZ5CpSAJT9h8gBi8P9D4e8IICNaPAmOB00sIWeeCpN"
 );
 
+const port = process.env.port || 3000
 // API
 
 // - App config
@@ -18,7 +19,8 @@ app.use(express.json());
 app.get("/", (request, response) => response.status(200).send("hello world"));
 
 app.post("/payments/create", async (request, response) => {
-  const total = request.query.total;
+  const total = request.body.basketTotal;
+  console.log(request.body)
 
   console.log("Payment Request Recieved BOOM!!! for this amount >>> ", total);
 
@@ -38,3 +40,9 @@ exports.api = functions.https.onRequest(app);
 
 // Example endpoint
 // http://localhost:5001/challenge-4b2b2/us-central1/api
+
+
+app.listen(port, error=> {
+  if (error) throw error;
+  console.log('Server running on port ' + port);
+});
