@@ -37,7 +37,7 @@ app.post("/payments/create", async (request, response) => {
   });
 });
 
-
+exports.api = functions.https.onRequest(app)
 
 app.listen(port, (err) => {
   if (err) throw err
