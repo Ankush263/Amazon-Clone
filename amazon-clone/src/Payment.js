@@ -28,7 +28,10 @@ const Payment = () => {
     const getClientSecret = async () => {
       const response = await axios({
         method: 'post',
-        url: `/payments/create?total=${getBasketTotal(basket) * 100}`
+        url: '/payments/create',
+        data: {
+          basketTotal: getBasketTotal(basket)*100
+        }
       })
       setClientSecret(response.data.clientSecret)
     }
@@ -49,8 +52,7 @@ const Payment = () => {
       }
     }).then(({ paymentIntent}) => {
 
-      db
-        .collection('users')
+      db.collection('users')
         .doc(user?.uid)
         .collection('orders')
         .doc(paymentIntent.id)
@@ -71,6 +73,25 @@ const Payment = () => {
       history.replace('/orders')
     })
   }
+
+
+  
+
+
+
+  // const handleSubmit = () => {
+  //   history.replace('/orders')
+  // }
+
+
+
+
+
+
+
+
+
+
 
   const handleChange = (e) => {
     setDisabled(e.empty)

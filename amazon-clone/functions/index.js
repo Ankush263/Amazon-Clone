@@ -1,7 +1,6 @@
 const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const stripe = require("stripe")("sk_test_51KyTYDSBWqHPKSDaPL3NjDXXCtNNryJmjZYJZQ0Jhh7vqbkjKvnsi29oaZ5CpSAJT9h8gBi8P9D4e8IICNaPAmOB00sIWeeCpN");
 
