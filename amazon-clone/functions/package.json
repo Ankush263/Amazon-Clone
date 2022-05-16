@@ -19,7 +19,6 @@
     "express": "^4.17.1",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.18.0",
-    "mongoose": "^6.3.3",
     "stripe": "^8.94.0"
   },
   "devDependencies": {
